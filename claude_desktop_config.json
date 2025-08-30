@@ -1,0 +1,53 @@
+{
+  "mcpServers": {
+    "shadcn": {
+      "command": "npx",
+      "args": ["shadcn@latest", "mcp"]
+    },
+    "@magicuidesign/mcp": {
+      "command": "npx",
+      "args": ["-y", "@magicuidesign/mcp@latest"]
+    },
+    "supabase": {
+      "command": "npx",
+      "args": [
+        "-y", 
+        "@supabase/mcp-server-supabase@latest",
+        "--project-ref=pmvmlusmozxrbzkvzvgo"
+      ],
+      "env": {
+        "SUPABASE_URL": "https://pmvmlusmozxrbzkvzvgo.supabase.co",
+        "SUPABASE_ANON_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBtdm1sdXNtb3p4cmJ6a3Z6dmdvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY1ODg2NDMsImV4cCI6MjA3MjE2NDY0M30.SEbpqM6gvD9emnSUDxsEUFq1ujZ0rQbu-QUQiboUTf0"
+      }
+    },
+    "augments-docs": {
+      "command": "npx",
+      "args": ["-y", "augments-mcp-server@latest"],
+      "env": {
+        "FRAMEWORKS": "nextjs,react,typescript,tailwindcss,framer-motion"
+      }
+    },
+    "figma-react": {
+      "command": "npx",
+      "args": ["-y", "figma-to-react-mcp@latest"],
+      "env": {
+        "FIGMA_ACCESS_TOKEN": "YOUR_FIGMA_TOKEN_HERE"
+      }
+    },
+    "vercel-nextjs": {
+      "command": "npx",
+      "args": ["-y", "@vercel/mcp-adapter@latest"],
+      "env": {
+        "VERCEL_TOKEN": "YOUR_VERCEL_TOKEN_HERE"
+      }
+    },
+    "n8n-mcp": {
+      "command": "npx",
+      "args": ["-y", "n8n-mcp@latest"],
+      "env": {
+        "N8N_INSTANCE_URL": "YOUR_N8N_INSTANCE_URL_HERE",
+        "N8N_API_KEY": "YOUR_N8N_API_KEY_HERE"
+      }
+    }
+  }
+}

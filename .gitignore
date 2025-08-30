@@ -1,0 +1,78 @@
+# Dependencies
+node_modules/
+/.pnp
+.pnp.js
+
+# Testing
+/coverage
+
+# Next.js
+/.next/
+/out/
+
+# Production
+/build
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# Temporary directories
+temp-*
+
+# Misc
+.DS_Store
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Package managers
+.pnpm-store/
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Vercel
+.vercel
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+Thumbs.db
+
+# Documentation (keep only essential)
+docs/
+*.md
+!README.md
+!CLAUDE.md
+!MCP_SETUP_GUIDE.md
+
+# Prevent duplicate files
+*\ 2
+*\ 2.*
+*\ copy*
+*\ Copy*
+*_2
+*_2.*
+*_copy*
+*_Copy*
+*.backup
+*.bak
+*.old
+*.orig
+duplicate*
+Duplicate*
+
+# Consolidated documentation - prevent redundant guides
+supabase-migration-guide.md
+SUPABASE_IMPLEMENTATION_GUIDE.md
