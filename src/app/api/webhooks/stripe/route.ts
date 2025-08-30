@@ -2,6 +2,7 @@ import { headers } from 'next/headers';
 import { NextRequest, NextResponse } from 'next/server';
 import Stripe from 'stripe';
 import { env } from '@/lib/env';
+import { rateLimit, getClientIP } from '@/lib/rate-limit';
 
 const stripe = env.STRIPE_SECRET_KEY 
   ? new Stripe(env.STRIPE_SECRET_KEY)
@@ -10,6 +11,21 @@ const stripe = env.STRIPE_SECRET_KEY
 const webhookSecret = env.STRIPE_WEBHOOK_SECRET;
 
 export async function POST(request: NextRequest) {
+  // Rate limiting protection
+  const clientIP = getClientIP(request);
+  const rateLimitResult = rateLimit(`webhook:${clientIP}`, {
+    windowMs: 60 * 1000, // 1 minute window
+    maxRequests: 100, // Max 100 webhook requests per minute per IP
+  });
+
+  if (!rateLimitResult.success) {
+    console.warn(`Rate limit exceeded for webhook from IP: ${clientIP}`);
+    return NextResponse.json(
+      { error: 'Too many requests' },
+      { status: 429 }
+    );
+  }
+
   if (!stripe) {
     return NextResponse.json(
       { error: 'Stripe not configured' },
@@ -30,15 +46,18 @@ export async function POST(request: NextRequest) {
 
   let event: Stripe.Event;
 
+  // Always require webhook secret - no exceptions
+  if (!webhookSecret) {
+    console.error('Webhook secret not configured - rejecting request');
+    return NextResponse.json(
+      { error: 'Webhook configuration error' },
+      { status: 500 }
+    );
+  }
+
   try {
-    if (webhookSecret) {
-      // Verify webhook signature in production
-      event = stripe.webhooks.constructEvent(body, signature, webhookSecret);
-    } else {
-      // Parse without verification in development (not recommended for production)
-      event = JSON.parse(body) as Stripe.Event;
-      console.warn('⚠️ Webhook signature verification disabled. Set STRIPE_WEBHOOK_SECRET for production.');
-    }
+    // Always verify webhook signature for security
+    event = stripe.webhooks.constructEvent(body, signature, webhookSecret);
   } catch (err) {
     console.error('Webhook signature verification failed:', err);
     return NextResponse.json(

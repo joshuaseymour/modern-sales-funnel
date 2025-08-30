@@ -62,29 +62,12 @@ export async function submitCheckout(prevState: CheckoutState, formDataParam: Fo
   const { name, email, card, expiry, bump } = result.data;
   // CVC is validated but not stored for security
 
-  // Simulate API call delay
-  await new Promise((resolve) => setTimeout(resolve, 1000));
-
-  // In a real app, you would validate and process the payment here
-  const success = Math.random() > 0.5;
-
-  if (!success) {
-    return {
-      success: false,
-      error: "Payment processing failed. Please try again.",
-    };
-  }
-
-  return { 
-    success: true,
-    // Return the form data for debugging/confirmation
-    formData: { 
-      name, 
-      email, 
-      card: '•••• •••• •••• ' + card.slice(-4), 
-      expiry, 
-      cvc: '•••', 
-      bump 
-    }
+  // SECURITY: This action is deprecated - use Stripe Elements in SecureCheckoutForm
+  // This endpoint should not process real payments
+  console.warn('⚠️ Legacy checkout action called - use SecureCheckoutForm instead');
+  
+  return {
+    success: false,
+    error: "This payment method is no longer supported. Please use the secure checkout form.",
   };
 }
