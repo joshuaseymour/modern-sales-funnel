@@ -571,4 +571,43 @@ After every coding task, Claude Code MUST verify:
 
 ---
 
-**This documentation is maintained for optimal Claude Code collaboration. Updated: 2025-01-30 with enforcement mechanisms and proactive behaviors.**
+---
+
+## 🏢 **C-Suite Agent Architecture (August 2025 Optimized)**
+
+### **Enhanced Executive Model**
+This project uses an optimized **C-Suite agent architecture** following August 2025 best practices for AI agent coordination and intelligent task routing.
+
+#### **The Executive Team**
+- **CEO (ceo-leadership)**: Strategic FOCUS, organizational priorities, vision clarity
+- **CMO (cmo-marketing-sales)**: USERS experience, front-end optimization, user engagement  
+- **CVO (cvo-product-service)**: VALUE creation, optimization, delivery systems
+- **COO (coo-management-operations)**: ADMIN systems, back-end operations, technical infrastructure
+- **CFO (cfo-cash-flow)**: FUNDS management, financial systems, legal compliance
+- **c-suite-orchestrator**: Board-level coordination for complex multi-executive decisions
+
+#### **Smart Task Routing (4 Levels)**
+```
+Level 1: Direct specialist → Executive informed (2 min)
+Level 2: Executive → Specialist team → Executive decision (15 min)  
+Level 3: Multi-executive coordination via orchestrator (30 min)
+Level 4: Full C-suite strategic decisions (60 min)
+```
+
+#### **Enhanced Features**
+- **Executive Briefing System**: Shared context across all executives
+- **Intelligent Routing**: Automatic complexity-based task assignment
+- **Performance Tracking**: Executive effectiveness and system optimization metrics
+- **Context Sharing**: Decision history and cross-functional awareness
+
+#### **For Claude Code Users**
+When working with this project, tasks are automatically routed to the appropriate executive level based on:
+- **Domain expertise** (FOCUS, USERS, VALUE, ADMIN, FUNDS)
+- **Task complexity** (specialist, executive, coordination, strategic)
+- **Cross-functional impact** (single vs. multi-domain decisions)
+
+See `C-SUITE_IMPLEMENTATION_GUIDE.md` for detailed architecture documentation.
+
+---
+
+**This documentation is maintained for optimal Claude Code collaboration. Updated: 2025-08-31 with C-suite architecture optimization and August 2025 best practices.**

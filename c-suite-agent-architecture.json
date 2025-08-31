@@ -1,0 +1,188 @@
+{
+  "csuiteArchitecture": {
+    "version": "2025.08.31",
+    "description": "Optimized C-Suite Agent Architecture with August 2025 Best Practices",
+    "
+": {
+      "briefingSystem": "Shared context across all executives",
+      "smartRouting": "Complexity-based task assignment",
+      "performanceMetrics": "Executive effectiveness tracking",
+      "escalationPaths": "Clear decision hierarchy"
+    },
+    "executives": {
+      "ceo-leadership": {
+        "domain": "FOCUS",
+        "responsibility": "Strategic priorities, organizational alignment, vision clarity",
+        "primaryTools": ["Read", "Write", "Task"],
+        "specialistTeam": [
+          "strategic-analyst",
+          "organizational-coordinator", 
+          "decision-framework"
+        ],
+        "activationTriggers": [
+          "Strategic planning requests",
+          "Priority conflicts between departments", 
+          "Vision alignment needs",
+          "Organizational restructuring"
+        ],
+        "escalationTo": "c-suite-orchestrator",
+        "collaboratesWith": ["cmo-marketing-sales", "cvo-product-service", "coo-management-operations", "cfo-cash-flow"]
+      },
+      "cmo-marketing-sales": {
+        "domain": "USERS",
+        "responsibility": "User experience, front-end optimization, user engagement, conversion",
+        "primaryTools": ["Read", "Write", "WebSearch", "WebFetch"],
+        "specialistTeam": [
+          "content-marketer",
+          "social-media-copywriter", 
+          "conversion-optimizer",
+          "user-experience-designer",
+          "marketing-attribution-analyst"
+        ],
+        "activationTriggers": [
+          "User experience issues",
+          "Front-end optimization needs",
+          "Content creation requests",
+          "Conversion rate problems",
+          "User engagement strategies"
+        ],
+        "escalationTo": "ceo-leadership",
+        "collaboratesWith": ["cvo-product-service", "coo-management-operations"]
+      },
+      "cvo-product-service": {
+        "domain": "VALUE", 
+        "responsibility": "Value creation, product optimization, service delivery, value capture",
+        "primaryTools": ["Read", "Write", "WebSearch"],
+        "specialistTeam": [
+          "product-strategist",
+          "value-analyst",
+          "service-optimizer",
+          "pricing-strategist"
+        ],
+        "activationTriggers": [
+          "Product strategy decisions",
+          "Value proposition optimization",
+          "Service delivery improvements", 
+          "Pricing and value capture",
+          "Feature prioritization"
+        ],
+        "escalationTo": "ceo-leadership",
+        "collaboratesWith": ["cmo-marketing-sales", "coo-management-operations", "cfo-cash-flow"]
+      },
+      "coo-management-operations": {
+        "domain": "ADMIN",
+        "responsibility": "Back-end operations, administrative systems, technical infrastructure",
+        "primaryTools": ["*"],
+        "specialistTeam": [
+          "architect-reviewer",
+          "code-reviewer", 
+          "debugger",
+          "performance-profiler",
+          "database-admin",
+          "infrastructure-orchestrator",
+          "mcp-integration-engineer",
+          "security-specialist"
+        ],
+        "activationTriggers": [
+          "Technical architecture decisions",
+          "Infrastructure problems",
+          "Performance optimization",
+          "Security issues",
+          "Database operations",
+          "Build and deployment",
+          "Code quality concerns"
+        ],
+        "escalationTo": "ceo-leadership", 
+        "collaboratesWith": ["cvo-product-service", "cfo-cash-flow"]
+      },
+      "cfo-cash-flow": {
+        "domain": "FUNDS",
+        "responsibility": "Financial management, legal compliance, budget allocation, cost optimization",
+        "primaryTools": ["Read", "Write", "WebSearch"],
+        "specialistTeam": [
+          "business-analyst",
+          "legal-advisor",
+          "payment-integration"
+        ],
+        "activationTriggers": [
+          "Budget and financial decisions",
+          "Legal compliance issues", 
+          "Payment processing problems",
+          "Cost optimization needs",
+          "Financial reporting",
+          "Regulatory requirements"
+        ],
+        "escalationTo": "ceo-leadership",
+        "collaboratesWith": ["cvo-product-service", "coo-management-operations"]
+      }
+    },
+    "orchestration": {
+      "c-suite-orchestrator": {
+        "role": "Board-level decision coordinator",
+        "responsibility": "Complex decisions requiring multiple executive input",
+        "activationTriggers": [
+          "Multi-domain strategic decisions",
+          "Cross-functional conflicts",
+          "Major architecture changes",
+          "Business model shifts",
+          "Executive disagreements"
+        ],
+        "decisionMatrix": {
+          "simple": "Route directly to appropriate executive",
+          "complex": "Gather executive input before decision",
+          "strategic": "Full C-suite coordination required",
+          "emergency": "CEO override with post-decision briefing"
+        }
+      }
+    },
+    "routingLogic": {
+      "level1_direct": {
+        "description": "Direct specialist assignment",
+        "examples": ["Code review", "Debug error", "Write content"],
+        "routing": "Specialist → Executive (informed)"
+      },
+      "level2_executive": {
+        "description": "Executive decision required", 
+        "examples": ["UX strategy", "Technical architecture", "Pricing strategy"],
+        "routing": "Executive → Specialist team → Executive decision"
+      },
+      "level3_coordination": {
+        "description": "Multi-executive coordination",
+        "examples": ["Product launch", "Major feature", "Rebranding"],
+        "routing": "c-suite-orchestrator → Multiple executives → Coordinated decision"
+      },
+      "level4_strategic": {
+        "description": "Board-level strategic decisions",
+        "examples": ["Business model change", "Major acquisition", "Pivot strategy"],
+        "routing": "c-suite-orchestrator → Full C-suite → CEO final decision"
+      }
+    },
+    "contextSharing": {
+      "executiveBriefing": {
+        "frequency": "Per session",
+        "content": ["Strategic priorities", "Budget constraints", "User feedback", "Technical limitations", "Market conditions"],
+        "distribution": "All executives receive relevant updates"
+      },
+      "decisionHistory": {
+        "tracking": "All executive decisions logged",
+        "learning": "Pattern recognition for improved routing",
+        "escalation": "Previous decision context available"
+      }
+    },
+    "performanceMetrics": {
+      "executiveEffectiveness": [
+        "Task completion rate",
+        "Decision accuracy",
+        "Collaboration frequency", 
+        "Escalation patterns",
+        "User satisfaction"
+      ],
+      "systemOptimization": [
+        "Routing accuracy",
+        "Context sharing effectiveness",
+        "Decision speed",
+        "Resource utilization"
+      ]
+    }
+  }
+}
